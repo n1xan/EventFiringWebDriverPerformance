@@ -1,52 +1,123 @@
-# Prerequisites
-*.d
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Build Folders (you can add more if you have others)
+bin/
+obj/
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Precompiled Headers
-*.gch
-*.pch
+# Mono Auto Generated Files
+mono_crash.*
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Folder config file
+Desktop.ini
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# VS Code directories
+.vscode/
+.vscode-test/
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Node.js directories
+node_modules/
+jspm_packages/
+
+# JetBrains Rider
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio for Mac
+.vscode/
+.idea/
+*.suo
+*.plist
+*.csproj.user
+
+# Rider
+.idea/
+*.suo
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Linux
+*~
+
+# Global JetBrains Rider ignores
+.idea/
+*.suo
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Local History for JetBrains products
+.localhistory/
+
+# JetBrains Rider
+.idea/
+*.suo
+
+# Rider
+.idea/
+
+# Visual Studio 2019
+.vs/
+
+# Rider
+.idea/
+*.suo
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Unix
+*
+!.gitignore
+*.swp
+.swo
+*.bak
+*~
+*.un~
+*.swx
+*.bck
+*.fossil
+*.fslckout
+*.gz
+*.log
+*.patch
+*.rej
+*.rs
+*.seed
+*.sh
+*.sw?
+*.txt~
