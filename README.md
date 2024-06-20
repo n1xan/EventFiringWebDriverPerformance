@@ -1,32 +1,34 @@
 ### Folders Structure
 
-📁 EventFiringDriverPerformance
-│
-├── 📁 Driver
-│   └── 📁 Cdp
-│       ├── DevToolsCommandExecutor.cs
-│       └── PagePerformanceMetrics.cs
-│
-├── 📁 Handlers
-│   ├── WebDriverDevToolsEventsHandler.cs
-│   ├── WebDriverJsHandler.cs
-│   ├── WebDriverPerfLogsHandler.cs
-│   └── WebDriverService.cs
-│
-├── 📁 PerformanceReports
-│   ├── 📁 Models
-│   │   ├── PagePerformanceData.cs
-│   │   ├── PagePerformanceTiming.cs
-│   │   ├── TestCasePerformanceData.cs
-│   └── PerformanceReportService.cs
-│
-├── 📁 Tests
-│   └── ShoppingCartTests.cs
-│
-├── .gitignore
-├── EventFiringDriverPerformance.csproj
-├── EventFiringDriverPerformance.sln
-└── README.md
+📁&nbsp;EventFiringDriverPerformance   
+│   
+├──📁&nbsp;Driver   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──📁&nbsp;Cdp   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;DevToolsCommandExecutor.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;PagePerformanceMetrics.cs   
+│   
+├──📁&nbsp;Handlers   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;WebDriverDevToolsEventsHandler.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;WebDriverJsHandler.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;WebDriverPerfLogsHandler.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;WebDriverService.cs   
+│   
+├──📁&nbsp;PerformanceReports   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──📁&nbsp;Models   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;PagePerformanceData.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;PagePerformanceTiming.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;TestCasePerformanceData.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;PerformanceReportService.cs   
+│   
+├──📁&nbsp;Tests   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;ShoppingCartTests.cs   
+│   
+├──&nbsp;.gitignore   
+├──&nbsp;EventFiringDriverPerformance.csproj   
+├──&nbsp;EventFiringDriverPerformance.sln   
+└──&nbsp;README.md   
+
+
 
 
 ### Folder Descriptions
