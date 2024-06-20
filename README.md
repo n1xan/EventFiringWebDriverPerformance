@@ -34,6 +34,7 @@
 ### Folder Descriptions
 
 - **Driver**: Contains driver-related files.
+  - `WebDriverService.cs`: Provides WebDriver-related services.
   - **Cdp**: Directory for Chrome DevTools Protocol related files.
     - `DevToolsCommandExecutor.cs`: Executes DevTools commands.
     - `PagePerformanceMetrics.cs`: Collects page performance metrics.
@@ -42,7 +43,6 @@
   - `WebDriverDevToolsEventsHandler.cs`: Handles events from the Chrome DevTools.
   - `WebDriverJsHandler.cs`: Manages JavaScript execution in WebDriver.
   - `WebDriverPerfLogsHandler.cs`: Logs WebDriver performance metrics.
-  - `WebDriverService.cs`: Provides WebDriver services.
 
 - **PerformanceReports**: Contains files related to performance reporting.
   - **Models**: Data models for performance metrics.
@@ -56,18 +56,8 @@
 
 - **.gitignore**: Specifies files and directories to be ignored by Git.
 - **EventFiringDriverPerformance.csproj**: Project file for the C# project.
-- **EventFiringDriverPerformance.sln**: Visual Studio solution file for the project.
+- **EventFiringDriverPerformance.sln**: Solution file for the project.
 - **README.md**: This file, providing an overview and documentation of the project.
-
-### Usage
-
-1. **Driver**: Navigate here for driver-related implementations.
-2. **Handlers**: Contains event handlers for WebDriver.
-3. **PerformanceReports**: Access this folder for performance reporting models and services.
-4. **Tests**: Contains test cases for the project.
-5. **.gitignore**: Ensures unnecessary files are not tracked by Git.
-6. **EventFiringDriverPerformance.csproj**: Project configuration file.
-7. **EventFiringDriverPerformance.sln**: Open this solution file in Visual Studio to start working with the project.
 
 
 # Project Requirements
