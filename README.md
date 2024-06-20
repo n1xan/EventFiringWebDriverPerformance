@@ -1,30 +1,33 @@
+### Folders Structure
+
 📁 EventFiringDriverPerformance
 │
 ├── 📁 Driver
-│ └── 📁 Cdp
-│ ├── DevToolsCommandExecutor.cs
-│ └── PagePerformanceMetrics.cs
+│   └── 📁 Cdp
+│       ├── DevToolsCommandExecutor.cs
+│       └── PagePerformanceMetrics.cs
 │
 ├── 📁 Handlers
-│ ├── WebDriverDevToolsEventsHandler.cs
-│ ├── WebDriverJsHandler.cs
-│ ├── WebDriverPerfLogsHandler.cs
-│ └── WebDriverService.cs
+│   ├── WebDriverDevToolsEventsHandler.cs
+│   ├── WebDriverJsHandler.cs
+│   ├── WebDriverPerfLogsHandler.cs
+│   └── WebDriverService.cs
 │
 ├── 📁 PerformanceReports
-│ ├── 📁 Models
-│ │ ├── PagePerformanceData.cs
-│ │ ├── PagePerformanceTiming.cs
-│ │ ├── TestCasePerformanceData.cs
-│ └── PerformanceReportService.cs
+│   ├── 📁 Models
+│   │   ├── PagePerformanceData.cs
+│   │   ├── PagePerformanceTiming.cs
+│   │   ├── TestCasePerformanceData.cs
+│   └── PerformanceReportService.cs
 │
 ├── 📁 Tests
-│ └── ShoppingCartTests.cs
+│   └── ShoppingCartTests.cs
 │
 ├── .gitignore
 ├── EventFiringDriverPerformance.csproj
 ├── EventFiringDriverPerformance.sln
 └── README.md
+
 
 ### Folder Descriptions
 
