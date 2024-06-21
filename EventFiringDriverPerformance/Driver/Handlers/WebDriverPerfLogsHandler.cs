@@ -31,20 +31,23 @@ public class WebDriverPerfLogsHandler
         String url = _driver.Url;
         String title = _driver.Title;
         var logs = _driver.Manage().Logs.GetLog("performance");
-        if (!logs.Where(e => e.Message.Contains("Page.frameStoppedLoading")).Any())
+        if (!logs.Any(e => e.Message.Contains("Page.frameStoppedLoading")))
         {
             return;
         }
         
-        while (logs.Where(e => e.Message.Contains("Page.frameStoppedLoading")).LastOrDefault() == null)
+        while (logs.LastOrDefault(e => e.Message.Contains("Page.frameStoppedLoading")) == null)
         {
             Console.WriteLine("Waiting for Page Events");
             logs = _driver.Manage().Logs.GetLog("performance");
         }
         
-        var timeSpan = (logs.Where(e => e.Message.Contains("Page.frameStoppedLoading")).LastOrDefault().Timestamp - logs.Where(e => e.Message.Contains("Page.frameStartedLoading")).FirstOrDefault().Timestamp);
+        var pageLoadTime = 
+            logs.LastOrDefault(e => e.Message.Contains("Page.frameStoppedLoading"))!.Timestamp - 
+            logs.FirstOrDefault(e => e.Message.Contains("Page.frameStartedLoading"))!.Timestamp;
+        
         var perTiming = new PagePerformanceTiming() { };
         
-        _performanceReportService.AddDataPoint(url, title, perTiming, timeSpan.TotalMilliseconds, 0);
+        _performanceReportService.AddDataPoint(url, title, perTiming, pageLoadTime.TotalMilliseconds, 0);
     }
 }

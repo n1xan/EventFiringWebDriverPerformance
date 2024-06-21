@@ -10,7 +10,12 @@ public class DevToolsCommandExecutor(DevToolsSession devTools)
     public PagePerformanceMetrics GetPerformanceMetrics()
     {
         devTools.SendCommand(new Performance.EnableCommandSettings());
-        var metricsResponse = devTools.SendCommand<Performance.GetMetricsCommandSettings, Performance.GetMetricsCommandResponse>(new Performance.GetMetricsCommandSettings()).Result;
+        var metricsResponse = 
+            devTools.SendCommand<
+                Performance.GetMetricsCommandSettings, 
+                Performance.GetMetricsCommandResponse>(
+                new Performance.GetMetricsCommandSettings()).Result;
+        
         devTools.SendCommand(new Performance.DisableCommandSettings());
         
         return ParseDevToolsMetricsResponse(metricsResponse.Metrics);

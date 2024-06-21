@@ -29,7 +29,7 @@ public class PerformanceReportService
                 {
                     PageUrl = pageUrl,
                     PageTitle = driverTitle,
-                    PagePerformanceTiming = pagePerformanceTiming,
+                    PagePerformanceTiming = pagePerformanceTiming!,
                     ReadyMeasure = readyMeasureTime,
                     JSHeapMemoryUsed = jsHeapMemoryUsed,
                 });

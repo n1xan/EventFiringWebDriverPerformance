@@ -13,9 +13,9 @@ public class WebDriverService
 {    
     private IWebDriver? _driver;
     private DevToolsCommandExecutor? _devToolsCommandExecutor;
-    private PerformanceReportService? _performanceReportService = new();
+    private readonly PerformanceReportService? _performanceReportService = new();
 
-    public WebDriverService InitializeDriver(int implicitWait = 5)
+    private void InitializeDriver(int implicitWait = 5)
     {
         ChromeOptions options = new ChromeOptions();
 
@@ -24,8 +24,7 @@ public class WebDriverService
         options.PerformanceLoggingPreferences = new ChromiumPerformanceLoggingPreferences()
         {
             IsCollectingNetworkEvents = false,
-            IsCollectingPageEvents = true,
-            BufferUsageReportingInterval = TimeSpan.FromMilliseconds(100)
+            IsCollectingPageEvents = true
         };
         options.SetLoggingPreference(LogType.Performance, LogLevel.All);
         
@@ -45,7 +44,6 @@ public class WebDriverService
         
         _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(implicitWait);
         _driver.Manage().Window.Maximize();
-        return this;
     }
 
     private EventFiringWebDriver RegisterEventHandlers(EventFiringWebDriver eventDriver)
@@ -53,14 +51,14 @@ public class WebDriverService
         WebDriverDevToolsEventsHandler webDriverDevToolsEventsHandler = new WebDriverDevToolsEventsHandler(this);
         eventDriver.Navigated += webDriverDevToolsEventsHandler.EventDriverOnNavigated;
         eventDriver.ElementClicked += webDriverDevToolsEventsHandler.EventDriverOnElementClicked;
-        
-        WebDriverPerfLogsHandler webDriverPerfLogsHandler = new WebDriverPerfLogsHandler(this);
-        eventDriver.Navigated += webDriverPerfLogsHandler.EventDriverOnNavigated;
-        eventDriver.ElementClicked += webDriverPerfLogsHandler.EventDriverOnElementClicked;
-        
-        WebDriverJsHandler webDriverJsHandler = new WebDriverJsHandler(this);
-        eventDriver.Navigated += webDriverJsHandler.EventDriverOnNavigated;
-        eventDriver.ElementClicked += webDriverJsHandler.EventDriverOnElementClicked;
+        //
+        // WebDriverPerfLogsHandler webDriverPerfLogsHandler = new WebDriverPerfLogsHandler(this);
+        // eventDriver.Navigated += webDriverPerfLogsHandler.EventDriverOnNavigated;
+        // eventDriver.ElementClicked += webDriverPerfLogsHandler.EventDriverOnElementClicked;
+        //
+        // WebDriverJsHandler webDriverJsHandler = new WebDriverJsHandler(this);
+        // eventDriver.Navigated += webDriverJsHandler.EventDriverOnNavigated;
+        // eventDriver.ElementClicked += webDriverJsHandler.EventDriverOnElementClicked;
         
         return eventDriver;
     }

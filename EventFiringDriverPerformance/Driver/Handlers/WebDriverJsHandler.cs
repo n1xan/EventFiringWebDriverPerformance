@@ -9,8 +9,8 @@ namespace EventFiringDriverPerformance.Driver.Handlers;
 
 public class WebDriverJsHandler
 {
-    private IWebDriver _driver;
-    private PerformanceReportService _performanceReportService;
+    private readonly IWebDriver _driver;
+    private readonly PerformanceReportService _performanceReportService;
 
     public WebDriverJsHandler(WebDriverService driverService)
     {
@@ -29,7 +29,8 @@ public class WebDriverJsHandler
         RecordPerformanceMetrics();
     }
     
-    private void RecordPerformanceMetrics(string pageLoadFormula = "performance.timing.loadEventEnd - performance.timing.connectStart")
+    private void RecordPerformanceMetrics(
+        string pageLoadFormula = "performance.timing.loadEventEnd - performance.timing.connectStart")
     {
         try
         {
@@ -47,7 +48,7 @@ public class WebDriverJsHandler
             var readyMeasureTime = double.Parse(readyMeasure ?? "0");
             var jsHeapMemoryUsed = double.Parse(jsHeapSize ?? "0");
 
-            var pagePerformanceTiming = JsonConvert.DeserializeObject<PagePerformanceTiming>(performanceTiming);
+            var pagePerformanceTiming = JsonConvert.DeserializeObject<PagePerformanceTiming>(performanceTiming!);
             _performanceReportService.AddDataPoint(pageUrl, pageTitle, pagePerformanceTiming, readyMeasureTime, jsHeapMemoryUsed);
         }
         catch (Exception e)

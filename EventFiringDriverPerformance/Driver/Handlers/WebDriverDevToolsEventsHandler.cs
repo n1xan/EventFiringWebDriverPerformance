@@ -8,9 +8,9 @@ namespace EventFiringDriverPerformance.Driver.Handlers;
 
 public class WebDriverDevToolsEventsHandler
 {
-    private IWebDriver _driver;
-    private DevToolsCommandExecutor _devToolsCommandExecutor;
-    private PerformanceReportService _performanceReportService;
+    private readonly IWebDriver _driver;
+    private readonly DevToolsCommandExecutor _devToolsCommandExecutor;
+    private readonly PerformanceReportService _performanceReportService;
     public WebDriverDevToolsEventsHandler(WebDriverService driverService)
     {
         _driver = driverService.GetDriver();
@@ -36,15 +36,17 @@ public class WebDriverDevToolsEventsHandler
         var resources = _devToolsCommandExecutor.GetPageResources();
         var metrics = _devToolsCommandExecutor.GetPerformanceMetrics();
         
-        double sum = resources.Where(r => r.ContentSize.HasValue).Sum(r => r.ContentSize.Value);
+        double transferSize = 
+            resources.Where(r => 
+                r.ContentSize.HasValue).Sum(r => r.ContentSize!.Value);
         
-        // Console.WriteLine(
-        //     $"Resources for Page: {url} [{resources.Length}] [Size: {sum/100} KBytes]: \n ->{ String.Join("\n ->", resources.ToList().Select(res => res.Url.ToString() + " | Size: " + res.ContentSize + " | LastModified: " + res.LastModified  + " | Type: " + res.Type))}");
-        
-        var pagePerformanceTiming = new PagePerformanceTiming();
-        pagePerformanceTiming.TransferSize = sum;
-        pagePerformanceTiming.DomContentLoadedEventEnd = metrics.DomContentLoaded * 1000;
-        
-        _performanceReportService.AddDataPoint(url, title, pagePerformanceTiming, (metrics.DomContentLoaded - metrics.NavigationStart) * 1000, metrics.JSHeapUsedSize);
+        var pagePerformanceTiming = new PagePerformanceTiming
+        {
+            TransferSize = transferSize,
+            DomContentLoadedEventEnd = metrics.DomContentLoaded * 1000
+        };
+        var loadTime = (metrics.DomContentLoaded - metrics.NavigationStart) * 1000;
+
+        _performanceReportService.AddDataPoint(url, title, pagePerformanceTiming, loadTime, metrics.JSHeapUsedSize);
     }
 }
