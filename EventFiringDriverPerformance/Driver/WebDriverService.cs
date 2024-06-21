@@ -48,14 +48,16 @@ public class WebDriverService
 
     private EventFiringWebDriver RegisterEventHandlers(EventFiringWebDriver eventDriver)
     {
+        // Uncomment the handler that you want to use for extraction of Performance Data
+        
         WebDriverDevToolsEventsHandler webDriverDevToolsEventsHandler = new WebDriverDevToolsEventsHandler(this);
         eventDriver.Navigated += webDriverDevToolsEventsHandler.EventDriverOnNavigated;
         eventDriver.ElementClicked += webDriverDevToolsEventsHandler.EventDriverOnElementClicked;
-        //
+        
         // WebDriverPerfLogsHandler webDriverPerfLogsHandler = new WebDriverPerfLogsHandler(this);
         // eventDriver.Navigated += webDriverPerfLogsHandler.EventDriverOnNavigated;
         // eventDriver.ElementClicked += webDriverPerfLogsHandler.EventDriverOnElementClicked;
-        //
+        
         // WebDriverJsHandler webDriverJsHandler = new WebDriverJsHandler(this);
         // eventDriver.Navigated += webDriverJsHandler.EventDriverOnNavigated;
         // eventDriver.ElementClicked += webDriverJsHandler.EventDriverOnElementClicked;
