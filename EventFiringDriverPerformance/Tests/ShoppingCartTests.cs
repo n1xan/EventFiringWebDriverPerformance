@@ -35,6 +35,7 @@ public class ShoppingCartTests
     public void LoginTest()
     {
         _driverService.GetDriver().Navigate().GoToUrl(BaseUrl);
+        
         IWebElement myAccountLink = _driverService.GetDriver().FindElement(By.LinkText("My account"));
         myAccountLink.Click();
 
