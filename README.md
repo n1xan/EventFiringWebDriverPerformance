@@ -1,1 +1,86 @@
-# EventFiringWebDriverPerformance
+### Folders Structure
+
+📁&nbsp;EventFiringDriverPerformance   
+│   
+├──📁&nbsp;Driver   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──📁&nbsp;Cdp   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;DevToolsCommandExecutor.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;PagePerformanceMetrics.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;WebDriverService.cs   
+│   
+├──📁&nbsp;Handlers   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;WebDriverDevToolsEventsHandler.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;WebDriverJsHandler.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;WebDriverPerfLogsHandler.cs   
+│   
+├──📁&nbsp;PerformanceReports   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──📁&nbsp;Models   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;PagePerformanceData.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;PagePerformanceTiming.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;TestCasePerformanceData.cs   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;PerformanceReportService.cs   
+│   
+├──📁&nbsp;Tests   
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;ShoppingCartTests.cs   
+│   
+├──&nbsp;.gitignore   
+├──&nbsp;EventFiringDriverPerformance.csproj   
+├──&nbsp;EventFiringDriverPerformance.sln   
+└──&nbsp;README.md   
+
+
+
+
+### Folder Descriptions
+
+- **Driver**: Contains driver-related files.
+  - `WebDriverService.cs`: Provides WebDriver-related services.
+  - **Cdp**: Directory for Chrome DevTools Protocol related files.
+    - `DevToolsCommandExecutor.cs`: Executes DevTools commands.
+    - `PagePerformanceMetrics.cs`: Collects page performance metrics.
+
+- **Handlers**: Includes various handlers for WebDriver events.
+  - `WebDriverDevToolsEventsHandler.cs`: Handles events from the Chrome DevTools.
+  - `WebDriverJsHandler.cs`: Manages JavaScript execution in WebDriver.
+  - `WebDriverPerfLogsHandler.cs`: Logs WebDriver performance metrics.
+
+- **PerformanceReports**: Contains files related to performance reporting.
+  - **Models**: Data models for performance metrics.
+    - `PagePerformanceData.cs`: Model for page performance data.
+    - `PagePerformanceTiming.cs`: Model for page performance timing data.
+    - `TestCasePerformanceData.cs`: Model for test case performance data.
+  - `PerformanceReportService.cs`: Service for generating performance reports.
+
+- **Tests**: Contains test classes.
+  - `ShoppingCartTests.cs`: Tests related to shopping cart functionality.
+
+- **.gitignore**: Specifies files and directories to be ignored by Git.
+- **EventFiringDriverPerformance.csproj**: Project file for the C# project.
+- **EventFiringDriverPerformance.sln**: Solution file for the project.
+- **README.md**: This file, providing an overview and documentation of the project.
+
+
+# Project Requirements
+
+## .NET SDK
+- Ensure you have the .NET 8.0 SDK installed.
+  - [Download .NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+
+## NuGet Packages
+- **Microsoft.NET.Test.Sdk (v17.10.0)**: Essential for running and reporting tests within Visual Studio.
+- **NUnit (v4.1.0)**: A unit-testing framework for all .NET languages.
+- **Selenium.Support (v4.21.0)**: Provides additional support classes for Selenium WebDriver.
+- **Selenium.WebDriver (v4.21.0)**: The main Selenium WebDriver package for browser automation.
+- **Selenium.WebDriver.ChromeDriver (v125.0.6422.14100)**: ChromeDriver, a separate executable that Selenium WebDriver uses to control Chrome.
+
+## Installation Steps
+
+1. **.NET SDK**:
+   - Download and install the .NET 8.0 SDK from the [official .NET website](https://dotnet.microsoft.com/download/dotnet/8.0).
+
+2. **NuGet Packages**:
+   - Ensure you have NuGet package manager installed (typically comes with Visual Studio).
+   - Restore NuGet packages by running:
+     ```sh
+     dotnet restore
+     ```
